@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GetUserMedia实例</title>
+</head>
+<script src="webrtc.js"></script>
+<body>
+    <video id="localVideo" autoplay></video>
+    <video id="remoteVideo" autoplay></video>
+    <input id="videoCallButton" type="button" disabled value="Video Call" />
+    <input id="endCallButton" type="button" disabled value="End Call" />
+
+</body>
+<script>    
+    window.addEventListener("load", pageReady);
+</script>
+
+<!--<script type="text/javascript">
+    var ws = new WebSocket("wss:" + window.location.href.substring(window.location.protocol.length).split('#')[0]);
+
+    ws.onmessage = function (event) {
+        var data = event.data;
+        console.log(data);
+
+    };
+    ws.onclose = function (evt) {
+        console.log('[closed] ' + evt.code);
+
+    };
+    ws.onerror = function (code, msg) {
+        console.log('[ERROR] ' + code + ': ' + msg);
+    };
+
+    var ice = {
+        "iceServer": [
+            { "url": "stun:stun.l.google.com:19302" }
+            // { "url": "turn:user@turnserver.com", "credential": "pass" }
+        ]
+    };
+    var PeerConnection = (window.PeerConnection ||
+        window.webkitPeerConnection00 ||
+        window.webkitRTCPeerConnection ||
+        window.mozRTCPeerConnection);
+    var pc = new PeerConnection(ice);
+    pc.onaddstream = function (event) {
+        var newVideo = document.getElementById("remote_video");
+        newVideo.src = window.URL.createObjectURL(event.stream);
+
+    }
+    var getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+
+    getUserMedia.call(navigator, {
+        video: true,
+        audio: true
+    }, function (localMediaStream) {
+        var sendOfferFn = function (desc) {
+            console.log("aaaaaaaa");
+            pc.setLocalDescription(desc);
+  
+            ws.send(JSON.stringify({
+                "event": "__offer",
+                "data": {
+                    "sdp": desc
+                }
+            }));
+        },
+            sendAnswerFn = function (desc) {
+                pc.setLocalDescription(desc);
+                ws.send(JSON.stringify({
+                    "event": "__answer",
+                    "data": {
+                        "sdp": desc
+                    }
+                }));
+            };
+        ws.send("join");
+        var video = document.getElementById('local_video');
+        video.src = window.URL.createObjectURL(localMediaStream);
+        pc.addStream(localMediaStream);
+        // if (isCaller) {
+            pc.createOffer(sendOfferFn);
+ 
+        // } else {
+            // pc.createAnswer(sendAnswerFn);
+        // }
+        ws.onmessage = function (event) {
+            console.log(event);
+            var json = JSON.parse(event.data);
+
+            if (json.event == "__ice_candidate") {
+                pc.addIceCandidate(new RTCIceCandidate(json.data.candidate))
+            } else {
+                pc.setRemoteDescription(new RTCSessionDescription(json.data.sdp));
+
+            }
+        }
+        video.onloadedmetadata = function (e) {
+            console.log("Label: " + localMediaStream.getVideoTracks()[0].label);
+            console.log("AudioTracks", localMediaStream.getAudioTracks());
+            console.log("VideoTracks", localMediaStream.getVideoTracks());
+        };
+    }, function (e) {
+        console.log('Reeeejected!', e);
+    });
+
+</script>-->
+
+
+</html>

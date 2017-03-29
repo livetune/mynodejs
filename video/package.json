@@ -1,0 +1,21 @@
+{
+  "name": "video",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+        "koa": "2.0.0",
+        "koa-static": "^2.0.0",
+        "koa-bodyparser": "3.2.0",
+        "koa-router": "^7.0.1",
+        "koa-session": "4.0.0",
+        "koa-send": "3.3.0",
+        "ws": "1.1.1",
+        "wss":"3.0.2"
+  }
+}
