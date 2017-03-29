@@ -116,7 +116,6 @@ function onConnect() {
 
 function onMessage(message) {
     console.log(message);
-   // wss.broadcast(message, ws);
 }
 
 function onClose() {
