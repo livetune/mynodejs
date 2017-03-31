@@ -1,0 +1,199 @@
+    * {
+        padding: 0px;
+        margin: 0px;
+        font-family: "Microsoft YaHei";
+    }
+
+    html,
+    body {
+        background: #f9f9f9;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .header {
+        width: 100%;
+        height: 100px;
+        background: #88DEB3;
+        position: fixed;
+        top: 0;
+        border-bottom: 5px solid #81B570;
+        z-index: 2;
+    }
+
+    .title {
+        font-size: 2.5em;
+        padding: 0 5px;
+        color: transparent;
+        font-weight: 900;
+        text-shadow: 0 10px 13px rgba(136, 136, 136, 0.5);
+        height: 100%;
+        margin-left: 300px;
+        float: left;
+        line-height: 100px;
+        overflow: hidden;
+        background-image: -webkit-linear-gradient(left, rgba(216, 27, 96, 1), rgba(128, 222, 234, 1) 25%, rgba(216, 27, 96, 1) 50%, rgba(128, 222, 234, 1) 75%, rgba(216, 27, 96, 1) 100%);
+        -webkit-background-clip: text;
+        background-size: 200% 100%;
+        -webkit-animation: streamer 4s linear infinite;
+                animation: streamer 4s linear infinite;
+    }
+
+    .admin {
+        position: absolute;
+        bottom: 10px;
+        right: 40px;
+        font-size: 1.1em;
+    }
+
+    .loginout {
+        text-decoration: none;
+    }
+
+    .loginout:hover {
+        color: red;
+    }
+
+    .side {
+        background: #ccc;
+        width: 300px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+    }
+
+    .item {
+        margin-top: 105px;
+    }
+
+    .item li {
+        font-size: 1.2em;
+        list-style: none;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        display: block;
+        position: relative;
+        cursor: pointer;
+    }
+    .item li:hover{
+        transition: all .2s ease-in-out;
+        box-shadow: 0 0 3px 3px rgba(229, 57, 53, 0.5);
+    }
+    .item li:active{
+        background: #aaa;
+    }
+
+    .item li::before {
+        content: "";
+        height: 0;
+        width: 0;
+        border-top: 2px solid #777;
+        border-left: 2px solid #777;
+        display: block;
+        position: absolute;
+        box-sizing: border-box;
+        opacity: 0;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+    .item li::after {
+        content: "";
+        height: 0;
+        width: 0;
+        border-bottom: 2px solid #777;
+        border-right: 2px solid #777;
+        display: block;
+        position: absolute;
+        box-sizing: border-box;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+    .item li:hover::before,
+    .item li:hover::after {
+        opacity: 1;
+        height: 100%;
+        width: 100%;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+    .content_warp {
+        margin: 130px 30px 30px 330px;
+        box-sizing: border-box;
+        border: 5px solid #99BDFF;
+        border-radius: 10px;
+        box-shadow: 0 0 10px;
+        height: calc(100% - 160px);
+        min-height: calc(100% - 560px);
+    }
+
+    .content {
+        border-radius: 10px;
+        background: inherit;
+        display: none;
+    }
+
+    .show {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    img {
+        width: 60%;
+        height: 50%;
+    }
+
+    .content>* {
+        margin: 20px;
+    }
+
+    form>* {
+        margin: 10px 0;
+    }
+
+    input[type=file] {
+        background: #bbb;
+        border: none;
+        border-radius: 3px;
+        height: 30px;
+        color: #fff;
+    }
+
+    input[type="file" i]::-webkit-file-upload-button {
+        height: 30px;
+        outline: none;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        margin-right: 10px;
+        background-image: -webkit-linear-gradient(top, #428bca 0, #2d6ca2 100%);
+        background-image: linear-gradient(to bottom, #428bca 0, #2d6ca2 100%);
+        background-color: #2d6ca2;
+    }
+
+    @-webkit-keyframes streamer {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -100% 0;
+        }
+    }
+
+    @keyframes streamer {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -100% 0;
+        }
+    }

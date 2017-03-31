@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <title>后台页面</title>
+    <link type="text/css" rel="stylesheet" href="style/index.css">
+    <script src="script/index.js">
+    </script>
+    <script type="text/javascript">
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="title">广告机の后台管理</div>
+    </div>
+    <div class="side">
+        <ul class="item" id="item_li">
+            <li>upload</li>
+            <li>delete</li>
+        </ul>
+    </div>
+    <div class="content_warp" id="content_item">
+        <div class="content show" align='center'>
+            <form method="POST" action="/upload" id='actform' enctype="multipart/form-data">
+                <select name="actlist" form="actform">
+                    <option value="near">Near</option>
+                    <option value="open">Open</option>
+                    <option value="play">Play</option>
+                    <option value="works">Wroks</option>
+                </select>
+                <input type="text" name="dirname" value='2000.0.0'>
+                <input type="file" name="file" onchange="imgPreview(this)" multiple>
+                <input type="submit" value="OK" class="btn btn-primary btn-sm">
+            </form>
+            <img id="preview" />
+            <iframe name=myiframe style="display: none;"></iframe>
+        </div>
+        <div class="content" align='center'>
+            <button class="btn btn-primary btn-sm" id="btn1"> 获取当前存在的文件 </button>
+            <form method="POST" action="/delete" id='delform'>
+                <select name="dellist" id="list1" form="delform" onchange="change()">
+                </select>
+                <select name="deldir" id="list2" form="delform" onchange="delPreview()">
+                </select>
+                <input type="submit" value="OK" class="btn btn-primary btn-sm">
+            </form>
+            <img id="preview1" />
+            <iframe name=myiframe style="display: none;"></iframe>
+        </div>
+    </div>
+    <div class="content_warp1" display:inline id="ss">
+    </div>
+</body>
+
+</html>

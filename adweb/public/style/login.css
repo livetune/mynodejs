@@ -1,0 +1,128 @@
+    * {
+        padding: 0px;
+        margin: 0px;
+        font-family: "Microsoft YaHei";
+    }
+
+    body {
+        background: url(../images/Background.png) no-repeat fixed;
+        background-size: cover;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        /*定义body的元素垂直居中*/
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        /*定义body的里的元素水平居中*/
+    }
+
+    .loginBox {
+        width: 600px;
+        height: 450px;
+        margin: 0 auto;
+        position: relative;
+        top: 250px;
+    }
+
+    .loginBox .logBox_bg {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #dddfcb;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 5px 15px #505050;
+        opacity: .2;
+        position: absolute;
+    }
+
+    .loginBox .logBox_ttl {
+        width: 100%;
+        color: #fff;
+        font-size: 2em;
+        font-weight: 900;
+        text-shadow: 0 3px 10px #505050;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
+
+    .loginBox .logBox_log {
+        position: relative;
+    }
+
+    .login li {
+        display: block;
+        list-style: none;
+        width: 400px;
+        height: 50px;
+        border: 1px solid #A5D2A5;
+        box-shadow: 0 0 5px #505050 inset;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    .login_input {
+        width: 340px;
+        height: 100%;
+        margin: 0 auto;
+        border: none;
+        outline: none;
+        background: none;
+        line-height: 100%;
+        font-size: 1.5em;
+        padding-left: 50px;
+        color: #fff;
+    }
+
+    .login_input::-webkit-input-placeholder {
+        color: #fff;
+    }
+    /* 使用webkit内核的浏览器 */
+
+    .login_input:-moz-placeholder {
+        color: #fff;
+    }
+    /* Firefox版本4-18 */
+
+    .login_input::-moz-placeholder {
+        color: #fff;
+    }
+    /* Firefox版本19+ */
+
+    .login_input:-ms-input-placeholder {
+        color: #fff;
+    }
+    /* IE浏览器 */
+
+    .user_icon {
+        background: url(../images/Person.png) no-repeat 15px 15px;
+    }
+
+    .password_icon {
+        background: url(../images/Lock.png) no-repeat 15px 15px;
+    }
+
+    .login_btn {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        background: #91c46c;
+        border: none;
+        color: #fff;
+        font-size: 1.5em;
+        box-shadow: 0 1px 5px #fff inset, 0 1px 5px #505050;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .login_btn:hover{
+        background: #8dbb6b;
+    }
+    .login_btn:active{
+        background: #81af60;
+    }
